@@ -1,74 +1,28 @@
-<!DOCTYPE html>
 <html>
 <head>
 <meta charset="utf-8">
-<meta http-equiv="cache-control" content="no-cache">
-<meta http-equiv="pragma" content="no-cache">
-<meta http-equiv="expires" content="0">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-<link rel="shortcut icon" href="img/kurento.png" type="image/png">
-
-
-<script src="webjars/jquery/dist/jquery.min.js"></script>
 
 <script src="js/kurento-utils.js"></script>
 <script src="js/index.js"></script>
+
 <title>Minimal client</title>
 </head>
 <body>
 
 	<br>
-	<a id="start" href="#" class="btn btn-success"><span
-		class="glyphicon glyphicon-play"></span> Start </a> <a id="pause"
-		href="#" class="btn btn-primary"><span id="pause-icon"
-		class="glyphicon glyphicon-pause"></span><span id="pause-text">
-			Pause </span></a> <a id="stop" href="#" class="btn btn-danger"><span
-		class="glyphicon glyphicon-stop"></span> Stop</a>
-	<a id="debugDot" href="#" class="btn btn-warning">
-		<span class="glyphicon glyphicon-eye-open"></span>
-		Debug DOT
-	</a>
+	
+		<button onclick="start()" id="start">start</button>
+		<button onclick="stop()" id="stop">stop</button> 
+		
 
-	<br>
-	<input type="radio" name="mode" value="video-and-audio"
-		checked="checked"> Video and audio <input type="radio"
-		name="mode" value="video-only"> Video only <input
-		type="radio" name="mode" value="audio-only"> Audio only
 
 	<br>
 	<input type="text" id="videourl"
-		value="rtsp://172.18.191.201:554/user=admin_password=BhcGS01Q_channel=1_stream=0.sdp?real_stream"
+		value="rtsp://172.18.200.54:554/Streaming/Channels/1"
 		style="width: 100%">
 
 
 	<br>
-	<span> Is seekable </span>
-	<input type="text" id="isSeekable" style="width: 100%" disabled>
-
-	<br>
-	<span>Seek init (ms)</span>
-	<input type="text" id="initSeek" style="width: 100%" disabled>
-
-	<br>
-	<span> Seek end (ms)</span>
-	<input type="text" id="endSeek" style="width: 100%" disabled>
-
-	<br>
-	<span> Video duration (ms)</span>
-	<input type="text" id="duration" style="width: 100%" disabled>
-
-	<br>
-	<span> Go to</span>
-	<input type="text" id="seekPosition" style="width: 50%"> <span>
-		ms</span> <a id="doSeek" href="#" class="btn btn-warning"><span
-		class="glyphicon glyphicon-forward"></span> Seek </a>
-
-	<br>
-	<span> Video position</span>
-	<input type="text" id="videoPosition" style="width: 50%" disabled><span>
-		ms</span> <a id="getPosition" href="#" class="btn btn-info"><span
-		class="glyphicon glyphicon-time"></span> Get Position </a>
-
 
 	<div id="videoBig">
 		<video id="video" autoplay muted playsinline width="640px" height="480px"
