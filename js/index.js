@@ -70,7 +70,7 @@ function start() {
 
 function onOffer(error, offerSdp) {
 	if (error)
-		return console.error('Error generating the offer');
+		return console.error('Error generating the offer:' + error);
 	console.info('Invoking SDP offer callback function ' + location.host);
 
 	var message = {
